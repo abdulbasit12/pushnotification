@@ -9,9 +9,7 @@ self.addEventListener('push', function (event) {
         // Add other options like badge, image, data, actions
     };
 
-    event.waitUntil(
-        self.registration.showNotification(title, options)
-    );
+    event.waitUntil(new Promise(resolve => setTimeout(resolve, 100)).then(() => self.registration.showNotification(title, options)));
 });
 
 self.addEventListener('notificationclick', function (event) {
