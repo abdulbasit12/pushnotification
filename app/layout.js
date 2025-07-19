@@ -17,6 +17,16 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js') // This path is relative to the origin
+      .then(function (registration) {
+        console.log('Service Worker registered with scope:', registration.scope);
+      }).catch(function (error) {
+        console.log('Service Worker registration failed:', error);
+      });
+  }
+
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
