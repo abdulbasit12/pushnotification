@@ -5,7 +5,7 @@ self.addEventListener('push', function (event) {
     const title = data.notification.title || 'Default Title';
     const options = {
         body: data.notification.body || 'Default Body',
-        icon: data.notification.icon || '/firebase-logo.png', // Or an appropriate icon
+        icon: data.notification.icon || '/icons/icon-192x192.png', // Or an appropriate icon
         // Add other options like badge, image, data, actions
     };
 
